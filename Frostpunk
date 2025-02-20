@@ -1,0 +1,69 @@
+from collections import defaultdict
+import csv
+import random
+
+
+recipes = {}
+stockpile = {"workforce": 4800, "heatstamp":450, "prefab":1500, "core":1}
+
+# ideal: recipes == {"central_district": "cost":{...}, "rate":{...}}
+# load recipes file
+with open("recipe.csv", newline="") as recipeFile:
+	for row in csv.DictReader(recipeFile):
+		# {'name': 'central_district', 'rate_heat': '0', 'rate_coal': '0', 'rate_food': '40', 'rate_shelter': '0', 'rate_workforce': '0', 'rate_material': '40', 'rate_prefabs': '0', 'rate_goods': '40', 'rate_team': '0', 'rate_guard': '12', 'cost_workforce': '0', 'cost_heatstamp': '0', 'cost_prefab': '0', 'cost_core': '0'}
+		name = row["name"]
+		row.pop("name")
+		row = {key:int(value) for (key,value) in zip(row.keys(), row.values())} # turn numbers from str to int
+		cost = defaultdict(lambda:0)
+		rate = defaultdict(lambda:0)
+		for item, amount in row.items():
+			if "rate" in item:
+				rateName = item.split("_")[-1]
+				rate[rateName] = amount
+			elif "cost" in item:
+				costName = item.split("_")[-1]
+				cost[costName] = amount
+		recipes[name] = {"cost": cost, "rate": rate}
+
+districts = defaultdict(lambda:0)
+
+# add district(s)
+def add(district, n):
+	if not district in recipes.keys(): raise TypeError("district name not in dataset.")
+	districts[district] += n
+
+
+add("central_district", 1)
+add("food_district", 1)
+
+
+# get total rates
+def total(rateOrCost, districtsDict):
+	if not rateOrCost in ["rate", "cost"]:
+		raise TypeError("the arugment passed to total should be either \"rate\" or \"cost \"")
+	total = defaultdict(lambda:0)
+	for district, districtCount in districtsDict.items():
+		print(district)
+		for item, amount  in recipes[district][rateOrCost].items():
+			print(item, amount)
+			total[item] += amount * districtCount
+	return total
+print(total("cost",districts))
+
+
+
+# filter districts with some positive target rate and add to districts
+def improve(resource):
+	filtered_districts = list(filter(lambda district: district != "central_district" and recipes[district]["rate"][resource] > 0, recipes))
+	return random.choice(filtered_districts)
+
+
+
+testDict = {1:1,2:2}
+def testFunc(dict = testDict):
+	testDict[1] = 2
+testFunc()
+print(testDict)
+
+
+

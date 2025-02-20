@@ -1,0 +1,13 @@
+name,rate_heat,rate_coal,rate_food,rate_shelter,rate_workforce,rate_material,rate_prefabs,rate_goods,rate_team,rate_guard,cost_workforce,cost_heatstamp,cost_prefab,cost_core
+central_district,0,0,40,0,0,40,0,40,0,12,0,0,0,0
+housing_district,-40,0,0,20,-200,0,0,0,0,0,200,40,200,0
+food_district,-40,0,50,0,-600,-25,0,0,0,0,600,40,200,0
+extraction_district_coal,-50,0,0,0,-600,-50,0,0,0,0,600,40,150,0
+extraction_district_oil,-20,120,0,0,-600,-50,0,0,0,0,600,40,150,0
+extraction_district_steam,-20,0,0,0,-600,-50,0,0,0,0,600,40,150,0
+extraction_district_prefabs,-20,0,0,0,-600,-50,80,0,0,0,600,40,150,0
+extraction_district_materials,-20,0,0,0,-600,100,0,0,0,0,600,40,150,0
+extraction_district_materials_more,-20,0,0,0,-600,150,0,0,0,0,600,40,150,0
+industrial_distrrict,-20,0,0,0,-600,-50,10,0,0,0,600,40,100,0
+logistics_district,-20,0,0,0,-400,-25,0,0,15,0,400,40,200,0
+research_institute,-20,0,0,0,-400,0,0,0,0,0,0,400,100,50
