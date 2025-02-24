@@ -1,5 +1,5 @@
 # frostpunt-2-strategizer
- A open-ended project to practice automating decision making
+ An open-ended project to practice automating decision making
 
 ## Background
 I want to find a better way to play management game than relying on unreliable and imprecise gut feeling.
