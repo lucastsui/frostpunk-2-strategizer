@@ -13,8 +13,11 @@ In the planning phase, I use hand written notes to draft out vaugely what will b
 
 ## Lessons learnt:
 As project requirements and coding decisions inform each other as the project goes on, refactoring in inevitable. Balancing the desire to reducing refactoring versus avoiding decision paralysis is a task that I haven't found a good solution yet.
+
 Eg origianlly, the name of a building is a dictionary item. Unbeknownst to me this makes search dictionaries by name very clumsy, forcing me to store the building stats as dictionary of dictionaries, with building name as keys.
+
 Eg In the midst of development, it turns out that the effects of each building depends on its surrounding buildings, necessitating the encoding of geometric information into the decision making process, massivley complicating the project.
+
 Waterfall system design doesn't feel like a good approach as there are bound to be unanticipated problems necessitating changes.
 
 
