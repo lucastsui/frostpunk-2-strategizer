@@ -1,4 +1,4 @@
-# frostpunt-2-strategizer
+# frostpunk-2-strategizer
  An open-ended project to practice automating decision making in the resource management game Frostpunk 2.
 
 ## Background
