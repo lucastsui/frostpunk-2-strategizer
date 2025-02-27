@@ -9,7 +9,10 @@ I use writing notes to draft out vaugely what will be the flow of logic. The rou
 
 ## Project status
 2025/02/21: I encode the effects of some buildings into an csv file. I go through some trial and error to decide that dictionary as the data format to go. So far the project comes to a halt as geometic layoff of each district affects their heat demand. And I don't have a good way to encode geometric data. Defining the dexagonal geometry of the game would be very time consuming. I decide to take a break from the project. I will have to decide if I have to research in UI desing to come up with a more visal solution or just go full mathematics to define said geometric space without visualization.
+
 2025/02/24: Search for a way to build a GUI. matplotlib.patches.RegularPolygon is worth further resaerch.
+
+2025/02/27: Want to plot a hexagon grid like the geometic layout of the game to visualize the copy of game state, but I don't have the knowledge to do it without extensive googling. So I will learn that before returning to the project.
 
 ## Lessons learnt:
 There are many times I am stuck. Some issues identified:
